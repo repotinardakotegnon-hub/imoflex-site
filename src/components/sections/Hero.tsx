@@ -4,9 +4,9 @@ import { scrollToSection } from '../../utils/navigation';
 import { motion } from 'framer-motion';
 
 const TRUST = [
-  { icon: Star, label: '4.9/5 sur les stores' },
+  { icon: Star, label: 'Lancement à Cotonou, Bénin' },
   { icon: ShieldCheck, label: 'Paiements sécurisés' },
-  { icon: TrendingUp, label: '+120K utilisateurs' },
+  { icon: TrendingUp, label: '100% Mobile Money' },
 ];
 
 export function Hero() {

@@ -3,7 +3,6 @@ import { Problem } from '../components/sections/Problem';
 import { Features } from '../components/sections/Features';
 import { HowItWorks } from '../components/sections/HowItWorks';
 import { OwnersSection, TenantsSection } from '../components/sections/Audiences';
-import { Stats } from '../components/sections/Stats';
 import { Partners } from '../components/sections/Partners';
 import { Investors } from '../components/sections/Investors';
 import { Testimonials } from '../components/sections/Testimonials';
@@ -28,7 +27,6 @@ export function HomePage() {
       <HowItWorks />
       <OwnersSection />
       <TenantsSection />
-      <Stats />
       <PublishCTA />
       <Partners />
       <Investors />

@@ -12,6 +12,9 @@ export function PhoneMockup() {
 
       {/* Frame */}
       <div className="relative rounded-[2.6rem] bg-ink-950 p-2.5 shadow-glow-lg ring-1 ring-white/10">
+        <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium text-white/60 backdrop-blur-md">
+          Aperçu de l'application
+        </div>
         <div className="relative overflow-hidden rounded-[2.1rem] bg-[#0A071A]">
           {/* Notch */}
           <div className="absolute left-1/2 top-2 z-20 h-6 w-28 -translate-x-1/2 rounded-full bg-ink-950" />

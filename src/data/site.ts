@@ -21,11 +21,9 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { label: 'Utilisateurs actifs', value: 120000, suffix: '+', display: '120K+' },
-  { label: 'Logements listés', value: 35000, suffix: '+', display: '35K+' },
-  { label: 'Propriétaires', value: 8200, suffix: '+', display: '8.2K+' },
-  { label: 'Villes couvertes', value: 24, suffix: '', display: '24' },
-  { label: 'Transactions / mois', value: 180000, suffix: '+', display: '180K+' },
+  { label: 'Ville de lancement', value: 'Cotonou', suffix: '', display: 'Cotonou' },
+  { label: 'Paiement', value: '100%', suffix: '', display: '100%' },
+  { label: 'Commission transparente', value: 6, suffix: '%', display: '6%' },
 ];
 
 export type Feature = {
@@ -121,97 +119,17 @@ export const TIMELINE = [
   { year: '2027+', title: 'Expansion africaine', desc: 'Déploiement régional, fintech immobilière panafricaine.' },
 ];
 
-export const TESTIMONIALS = [
-  {
-    name: 'Aïcha Diallo',
-    role: 'Propriétaire, Dakar',
-    quote: 'ImoFlex a transformé la gestion de mes 12 appartements. Je vois chaque paiement en temps réel et je ne gère plus les retards en espèces.',
-    avatar: 'https://images.pexels.com/photos/5905867/pexels-photo-5905867.jpeg?auto=compress&cs=tinysrgb&w=160',
-  },
-  {
-    name: 'Kwame Mensah',
-    role: 'Locataire, Accra',
-    quote: 'J’ai trouvé mon appartement en 3 jours. Le paiement du loyer via mobile money prend 30 secondes. Plus besoin de déplacements.',
-    avatar: 'https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=160',
-  },
-  {
-    name: 'Fatou Ndiaye',
-    role: 'Agence immobilière, Abidjan',
-    quote: 'Nos clients propriétaires adorent le tableau de bord. ImoFlex nous a apporté de la crédibilité et un vrai outil professionnel.',
-    avatar: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=160',
-  },
-  {
-    name: 'Moussa Traoré',
-    role: 'Investisseur, Bamako',
-    quote: 'Le potentiel du marché africain est énorme. ImoFlex adresse un vrai problème avec une exécution de niveau international.',
-    avatar: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=160',
-  },
-];
+export const TESTIMONIALS: Array<{ name: string; role: string; quote: string; avatar: string }> = [];
 
 export const FAQ = [
   { q: 'Comment fonctionne ImoFlex ?', a: 'ImoFlex est une application mobile qui connecte locataires, propriétaires et agences. Vous recherchez, gérez et payez votre loyer depuis votre smartphone.' },
-  { q: 'Comment télécharger l’application ?', a: 'L’application est disponible sur Google Play pour Android et l’App Store pour iOS. Scannez le QR code depuis le site pour un accès direct.' },
+  { q: 'Comment télécharger l’application ?', a: 'L\'application sera bientôt disponible sur Google Play. Inscrivez-vous à la newsletter pour être informé du lancement.' },
   { q: 'Comment publier un bien ?', a: 'Créez un compte propriétaire, ajoutez les photos et informations de votre bien, fixez le loyer. Votre annonce est visible immédiatement par les locataires.' },
   { q: 'Comment payer son loyer ?', a: 'Depuis l’application, dans la section Paiement. Choisissez votre méthode (mobile money, carte, virement), confirmez et recevez un reçu automatique.' },
   { q: 'Les paiements sont-ils sécurisés ?', a: 'Oui. Toutes les transactions sont chiffrées et traitées par des partenaires certifiés. Chaque paiement génère un reçu et un historique vérifiable.' },
   { q: 'Comment devenir partenaire ?', a: 'Rendez-vous sur la section Partenaires, remplissez le formulaire. Notre équipe vous contacte sous 48h pour discuter de l’intégration.' },
 ];
 
-export const BLOG_POSTS = [
-  {
-    slug: 'immobilier-africain-2030',
-    title: 'L’immobilier africain à l’horizon 2030 : les 5 tendances qui transforment le marché',
-    excerpt: 'Urbanisation, digitalisation, fintech — les forces qui redessinent le secteur immobilier sur le continent.',
-    category: 'Immobilier',
-    date: '12 juin 2026',
-    readingTime: '6 min',
-    image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-  {
-    slug: 'investir-immobilier-afrique',
-    title: 'Investir dans l’immobilier africain : guide pratique pour 2026',
-    excerpt: 'Rendements, fiscalité, financement, zones à fort potentiel — tout ce qu’il faut savoir avant d’investir.',
-    category: 'Investissement',
-    date: '28 mai 2026',
-    readingTime: '8 min',
-    image: 'https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-  {
-    slug: 'location-sans-friction',
-    title: 'La location sans friction : comment la technologie simplifie le parcours locatif',
-    excerpt: 'De la recherche à la signature, la digitalisation réduit les délais et les coûts pour tous.',
-    category: 'Location',
-    date: '14 mai 2026',
-    readingTime: '5 min',
-    image: 'https://images.pexels.com/photos/7587955/pexels-photo-7587955.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-  {
-    slug: 'fintech-immobilier',
-    title: 'Fintech + immobilier : le mariage qui change tout en Afrique',
-    excerpt: 'Mobile money, paiement de loyer digital, portefeuilles intégrés — la fintech débloque l’immobilier.',
-    category: 'Fintech',
-    date: '2 mai 2026',
-    readingTime: '7 min',
-    image: 'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-  {
-    slug: 'proprietes-digitales',
-    title: 'PropTech : les technologies qui redéfinissent la gestion immobilière',
-    excerpt: 'IA, big data, automatisation — les outils qui rendent la gestion plus efficace et transparente.',
-    category: 'Technologie',
-    date: '20 avril 2026',
-    readingTime: '6 min',
-    image: 'https://images.pexels.com/photos/7988077/pexels-photo-7988077.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-  {
-    slug: 'loyers-mobile-money',
-    title: 'Payer son loyer en mobile money : le nouveau standard africain',
-    excerpt: 'Sécurité, traçabilité, rapidité — pourquoi le mobile money devient la norme pour les loyers.',
-    category: 'Fintech',
-    date: '5 avril 2026',
-    readingTime: '4 min',
-    image: 'https://images.pexels.com/photos/4968404/pexels-photo-4968404.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-];
+export const BLOG_POSTS: Array<{ slug: string; title: string; excerpt: string; category: string; date: string; readingTime: string; image: string }> = [];
 
 export const BLOG_CATEGORIES = ['Tous', 'Immobilier', 'Investissement', 'Location', 'Technologie', 'Fintech'];

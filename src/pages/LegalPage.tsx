@@ -9,12 +9,10 @@ const LEGAL_INFO = [
     icon: Building,
     title: 'Éditeur du site et de l\'application',
     items: [
-      { label: 'Raison sociale', value: '[NOM LÉGAL DE LA SOCIÉTÉ, ex: ImoFlex SAS]' },
-      { label: 'Forme juridique', value: '[FORME JURIDIQUE, ex: Société par Actions Simplifiée]' },
-      { label: 'Capital social', value: '[MONTANT DU CAPITAL, ex: 10 000 000 FCFA]' },
-      { label: 'Siège social', value: '[ADRESSE COMPLÈTE DU SIÈGE]' },
-      { label: 'Immatriculation', value: '[NUMÉRO RCCM OU ÉQUIVALENT]' },
-      { label: 'Numéro fiscal', value: '[NUMÉRO IFU / NINEA]' },
+      { label: 'Raison sociale', value: 'AKOTEGNON Repotinard Salomon Pittoresque' },
+      { label: 'Forme juridique', value: 'Entrepreneur individuel' },
+      { label: 'Siège social', value: 'Agori, Abomey-Calavi, Bénin' },
+      { label: 'Numéro fiscal (IFU)', value: '0202661022204' },
     ],
   },
   {
@@ -29,8 +27,8 @@ const LEGAL_INFO = [
     icon: Mail,
     title: 'Contact',
     items: [
-      { label: 'Email', value: '[contact@imoflex.com]' },
-      { label: 'Téléphone', value: '[VOTRE NUMÉRO DE TÉLÉPHONE]' },
+      { label: 'Email', value: 'contact.imoflex@gmail.com' },
+      { label: 'Téléphone', value: '+229 01 90 73 45 13' },
     ],
   },
   {

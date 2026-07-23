@@ -8,13 +8,13 @@ import { ContactPage } from './pages/ContactPage';
 import { FounderPage } from './pages/FounderPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { SalesTermsPage } from './pages/SalesTermsPage';
 import { LegalPage } from './pages/LegalPage';
 import { DownloadCTA } from './components/ui/DownloadCTA';
 import { Section } from './components/ui/Section';
 import { useReveal } from './hooks/useReveal';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 import { WhatsAppWidget } from './components/ui/WhatsAppWidget';
-import { CookieConsent } from './components/ui/CookieConsent';
 import { HelmetProvider } from 'react-helmet-async';
 
 import { Partners } from './components/sections/Partners';
@@ -95,6 +95,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/confidentialite" element={<PrivacyPage />} />
             <Route path="/conditions" element={<TermsPage />} />
+            <Route path="/cgv" element={<SalesTermsPage />} />
             <Route path="/mentions-legales" element={<LegalPage />} />
             <Route path="/partenaires" element={
               <div className="pt-24">
@@ -111,7 +112,6 @@ function App() {
         </main>
         <Footer />
         <WhatsAppWidget />
-        <CookieConsent />
       </div>
     </HelmetProvider>
   );

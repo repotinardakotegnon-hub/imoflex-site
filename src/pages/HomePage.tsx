@@ -5,7 +5,6 @@ import { HowItWorks } from '../components/sections/HowItWorks';
 import { OwnersSection, TenantsSection } from '../components/sections/Audiences';
 import { Partners } from '../components/sections/Partners';
 import { Investors } from '../components/sections/Investors';
-import { Testimonials } from '../components/sections/Testimonials';
 import { FAQ } from '../components/sections/FAQ';
 import { Download } from '../components/sections/Download';
 import { AppScreenshots } from '../components/sections/AppScreenshots';
@@ -30,7 +29,6 @@ export function HomePage() {
       <PublishCTA />
       <Partners />
       <Investors />
-      <Testimonials />
       <Download />
       <AppScreenshots />
       <FAQ />

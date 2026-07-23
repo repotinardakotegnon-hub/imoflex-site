@@ -170,7 +170,8 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-ink-500">
             <button onClick={() => navigate('/confidentialite')} className="hover:text-white transition-colors">Politique de confidentialité</button>
-            <button onClick={() => navigate('/conditions')} className="hover:text-white transition-colors">Conditions d'utilisation</button>
+            <button onClick={() => navigate('/conditions')} className="hover:text-white transition-colors">Conditions d'utilisation (CGU)</button>
+            <button onClick={() => navigate('/cgv')} className="hover:text-white transition-colors">Conditions de Vente (CGV)</button>
             <button onClick={() => navigate('/mentions-legales')} className="hover:text-white transition-colors">Mentions légales</button>
             <button
               onClick={() => navigate('/contact')}

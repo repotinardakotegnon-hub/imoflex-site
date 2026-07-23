@@ -1,10 +1,15 @@
-import { Quote, MapPin, GraduationCap, Lightbulb, ArrowRight } from 'lucide-react';
+import {
+  ArrowDown, Target, Users, Zap, Globe, Quote,
+  GraduationCap, Lightbulb, MapPin,
+  Clock, DollarSign, AlertTriangle, ShieldOff,
+} from 'lucide-react';
 import { Section } from '../components/ui/Section';
 import { Seo } from '../components/ui/Seo';
 import { useReveal } from '../hooks/useReveal';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+/* ─── Timeline ────────────────────────────────────────────────────── */
 const JOURNEY = [
   {
     icon: MapPin,
@@ -23,6 +28,75 @@ const JOURNEY = [
   },
 ];
 
+/* ─── Motivations ─────────────────────────────────────────────────── */
+const MOTIVATIONS = [
+  {
+    icon: Target,
+    title: 'Résoudre des problèmes réels',
+    text: "Construire des solutions utiles avant de créer des fonctionnalités.",
+    color: 'from-brand-700 to-brand-500',
+  },
+  {
+    icon: Users,
+    title: 'Faciliter la vie des citoyens',
+    text: "Réduire le temps, les coûts et les frustrations liés au logement.",
+    color: 'from-emerald-700 to-emerald-500',
+  },
+  {
+    icon: Globe,
+    title: "Moderniser l'immobilier africain",
+    text: "Apporter plus de transparence, de simplicité et d'efficacité.",
+    color: 'from-sky-700 to-sky-500',
+  },
+  {
+    icon: Zap,
+    title: 'Construire des solutions durables',
+    text: "Créer des produits capables d'avoir un impact à grande échelle.",
+    color: 'from-amber-700 to-amber-500',
+  },
+];
+
+/* ─── Stats / Problem Figures ─────────────────────────────────────── */
+const STATS = [
+  {
+    icon: Clock,
+    value: '3 – 8',
+    unit: 'semaines',
+    label: 'Durée moyenne de recherche',
+    sub: "de logement sans plateforme digitale",
+    color: 'text-brand-600',
+    bg: 'bg-brand-50',
+  },
+  {
+    icon: DollarSign,
+    value: '1 – 3',
+    unit: 'mois de loyer',
+    label: "Frais d'intermédiaires",
+    sub: "versés en plus avant de signer",
+    color: 'text-amber-600',
+    bg: 'bg-amber-50',
+  },
+  {
+    icon: AlertTriangle,
+    value: '70 %',
+    unit: '',
+    label: 'Annonces non vérifiées',
+    sub: "sur les réseaux sociaux informels",
+    color: 'text-rose-600',
+    bg: 'bg-rose-50',
+  },
+  {
+    icon: ShieldOff,
+    value: '1 / 3',
+    unit: '',
+    label: "Locataires victimes d'arnaques",
+    sub: "au moins une fois dans leur recherche",
+    color: 'text-orange-600',
+    bg: 'bg-orange-50',
+  },
+];
+
+/* ─── Component ───────────────────────────────────────────────────── */
 export function FounderPage() {
   useReveal([]);
   const navigate = useNavigate();
@@ -30,37 +104,44 @@ export function FounderPage() {
   return (
     <div className="pt-24">
       <Seo
-        title="Le Fondateur — ImoFlex"
-        description="Découvrez le fondateur d'ImoFlex, sa vision et sa lettre ouverte pour transformer l'immobilier africain grâce à la technologie."
+        title="Répotinard Akotègnon — Fondateur d'ImoFlex"
+        description="Découvrez l'histoire de Répotinard Akotègnon, fondateur et CEO d'ImoFlex, et le parcours qui l'a conduit à créer cette plateforme immobilière africaine."
       />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/60 to-white" />
-        <div className="absolute inset-0 -z-10 bg-grid mask-fade-b opacity-60" />
+      {/* ── 1. HERO ─────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden py-20 sm:py-28">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/70 via-white to-white" />
+        <div className="absolute inset-0 -z-10 bg-grid mask-fade-b opacity-50" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute left-1/2 top-0 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-radial-brand opacity-60"
+        />
+
         <div className="container-px">
-          <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-            {/* Photo */}
+          <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+
+            {/* Portrait */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, type: 'spring', stiffness: 60 }}
-              className="reveal"
+              transition={{ duration: 0.8, type: 'spring', stiffness: 55 }}
+              className="relative mx-auto max-w-sm w-full"
             >
-              <div className="relative">
-                <div className="absolute -inset-4 -z-10 rounded-4xl bg-gradient-to-br from-brand-300/40 to-brand-500/20 blur-2xl" />
-                <div className="overflow-hidden rounded-4xl shadow-glow ring-1 ring-ink-200/70">
-                  <img
-                    src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="Fondateur d'ImoFlex"
-                    className="h-[480px] w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="absolute -bottom-5 left-6 right-6 rounded-2xl bg-white/95 p-4 shadow-glow ring-1 ring-ink-200/60 backdrop-blur">
-                  <p className="text-sm font-bold text-ink-900">Répotinard AKOTEGNON</p>
-                  <p className="text-xs text-ink-500">Fondateur & CEO · Visionnaire PropTech</p>
-                </div>
+              <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-br from-brand-400/30 to-brand-700/20 blur-3xl" />
+              <div className="overflow-hidden rounded-[2.5rem] shadow-glow ring-1 ring-ink-200/60">
+                <img
+                  src="/fondateur.png"
+                  alt="Répotinard Akotègnon — Fondateur d'ImoFlex"
+                  className="h-[520px] w-full object-cover object-top"
+                  loading="eager"
+                />
+              </div>
+              {/* Badge */}
+              <div className="absolute -bottom-5 left-5 right-5 rounded-2xl bg-white/95 p-4 shadow-glow ring-1 ring-ink-200/50 backdrop-blur-md">
+                <p className="text-sm font-bold text-ink-900">Répotinard Akotègnon</p>
+                <p className="text-xs text-ink-500">Fondateur &amp; CEO · ImoFlex</p>
               </div>
             </motion.div>
 
@@ -77,102 +158,86 @@ export function FounderPage() {
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, type: 'spring', stiffness: 70 }}
-                className="mt-5 text-4xl sm:text-5xl font-extrabold leading-tight text-ink-900 text-balance"
+                transition={{ duration: 0.7, delay: 0.2, type: 'spring', stiffness: 65 }}
+                className="mt-5 text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight text-ink-900 text-balance"
               >
-                Un entrepreneur africain avec une mission continentale
+                Répotinard Akotègnon
+                <span className="mt-2 block text-2xl sm:text-3xl font-semibold text-brand-700">
+                  Fondateur &amp; CEO d'ImoFlex
+                </span>
               </motion.h1>
-              <motion.p
+              <motion.blockquote
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="mt-5 text-lg text-ink-500"
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="mt-6 border-l-4 border-brand-500 pl-5 text-lg italic text-ink-500 leading-relaxed"
               >
-                Derrière ImoFlex, il y a une conviction profonde : l'Afrique ne doit plus subir
-                son immobilier. Elle doit le piloter. Cette conviction est née d'une expérience
-                personnelle, portée par des années de terrain et de technologie.
-              </motion.p>
+                Transformer les difficultés du logement en Afrique en solutions digitales accessibles à tous.
+              </motion.blockquote>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="mt-8 flex flex-wrap gap-3"
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mt-8"
               >
-                <button onClick={() => navigate('/vision')} className="btn-primary">
-                  Notre Vision
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-                <button onClick={() => navigate('/contact')} className="btn-secondary">
-                  Me contacter
-                </button>
+                <a href="#histoire" className="btn-primary inline-flex items-center gap-2">
+                  Découvrir mon parcours
+                  <ArrowDown className="h-4 w-4" />
+                </a>
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Open letter */}
-      <Section className="bg-ink-50/60">
+      {/* ── 2. MON HISTOIRE ─────────────────────────────────────── */}
+      <Section id="histoire" className="bg-ink-50/50">
         <div className="container-px">
           <div className="mx-auto max-w-3xl">
-            <span className="eyebrow reveal">Lettre ouverte</span>
+            <span className="eyebrow reveal">Mon histoire</span>
             <h2 className="section-title reveal mt-4" data-reveal-delay="60">
-              Pourquoi j'ai créé ImoFlex
+              D'où vient ImoFlex ?
             </h2>
 
-            <div className="mt-8 space-y-5 text-base leading-relaxed text-ink-600">
+            <div className="mt-8 space-y-6 text-base leading-relaxed text-ink-600">
               <p className="reveal" data-reveal-delay="80">
-                En 2024, j'ai vécu ce que vivent des millions d'Africains chaque jour : chercher un
-                logement pendant des semaines, jongler entre des annonces dispersées sur WhatsApp
-                et Facebook, appeler des numéros qui ne répondent plus, visiter des appartements
-                qui n'existent pas, et finalement payer un loyer en liquide sans aucun reçu.
+                Né à <strong className="text-ink-900"> Cotonou </strong> au Bénin, Répotinard Akotègnon s'intéresse très tôt aux défis du quotidien auxquels sont confrontées des millions de personnes.
               </p>
               <p className="reveal" data-reveal-delay="140">
-                Cette frustration m'a ouvert les yeux. Le problème n'était pas un manque de
-                logements — il y avait une vraie demande. Le problème était l'absence totale
-                d'infrastructure numérique. Pas de plateforme unifiée et fiable. Pas de paiement
-                digital. Pas de gestion moderne pour les propriétaires. Zéro.
+                Durant ses années d'études et au contact des réalités du terrain, il observe un problème récurrent : trouver un logement reste un parcours long, coûteux et souvent stressant.
               </p>
-              <p className="reveal" data-reveal-delay="200">
-                J'ai regardé ce qui se faisait à l'autre bout du monde — Zillow aux États-Unis,
-                Rightmove en UK, PropertyGuru en Asie. Des plateformes milliardaires bâties sur
-                un constat simple : organiser un marché fragmenté crée une valeur immense. Pourquoi
-                l'Afrique n'aurait-elle pas son équivalent ?
+              <p className="reveal" data-reveal-delay="180">
+                Les futurs locataires passent par des démarcheurs, des agences ou des réseaux informels. Les recherches prennent parfois plusieurs semaines et exposent les personnes à de nombreuses difficultés :
               </p>
-              <p className="reveal" data-reveal-delay="260">
-                ImoFlex est ma réponse à cette question. Une réponse africaine, construite pour
-                l'Afrique, par des gens qui comprennent ses réalités — le mobile money, les marchés
-                informels, les propriétaires sans système de gestion, les locataires qui méritent
-                mieux.
-              </p>
-              <p className="reveal font-semibold text-ink-800" data-reveal-delay="320">
-                Ce n'est pas juste une application. C'est l'infrastructure immobilière d'un
-                continent en mouvement.
+
+              <ul className="reveal space-y-3 pl-1" data-reveal-delay="220">
+                {[
+                  "Manque d'informations fiables",
+                  "Perte de temps considérable",
+                  "Déplacements inutiles",
+                  "Frais supplémentaires non prévus",
+                  "Risques d'arnaques",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-ink-600">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <blockquote className="reveal rounded-2xl bg-brand-50 border-l-4 border-brand-500 p-6 text-lg italic text-brand-800 font-medium" data-reveal-delay="260">
+                Pourquoi trouver un logement devrait-il être aussi compliqué à l'ère du numérique ?
+              </blockquote>
+
+              <p className="reveal font-semibold text-ink-800" data-reveal-delay="300">
+                Cette réflexion marque le début d'une aventure entrepreneuriale qui donnera naissance à ImoFlex.
               </p>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* Quote */}
-      <Section>
-        <div className="container-px">
-          <div className="reveal relative mx-auto max-w-4xl overflow-hidden rounded-4xl bg-gradient-to-br from-brand-800 to-brand-950 p-10 text-white shadow-glow sm:p-14">
-            <div className="absolute inset-0 bg-grid opacity-10" />
-            <Quote className="relative h-10 w-10 text-brand-300" />
-            <p className="relative mt-4 text-xl font-medium leading-relaxed sm:text-2xl">
-              "L'Afrique ne doit plus subir son immobilier. Elle doit le piloter. ImoFlex met
-              entre les mains de chaque locataire, chaque propriétaire, chaque agence, les outils
-              d'un secteur moderne. C'est notre contribution à un continent qui avance."
-            </p>
-            <p className="relative mt-6 text-sm font-semibold text-white/80">
-              — Répotinard AKOTEGNON, Fondateur & CEO d'ImoFlex
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      {/* Journey */}
+      {/* ── 3. COMMENT IMOFLEX EST NÉ ───────────────────────────────── */}
       <Section className="bg-ink-50/60">
         <div className="container-px">
           <div className="mx-auto max-w-2xl text-center">
@@ -201,22 +266,158 @@ export function FounderPage() {
         </div>
       </Section>
 
-      {/* CTA */}
+      {/* ── 4. PARCOURS ENTREPRENEURIAL ─────────────────────────── */}
+      <Section className="bg-ink-50/50">
+        <div className="container-px">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <span className="eyebrow reveal">Profil</span>
+              <h2 className="section-title reveal mt-4" data-reveal-delay="60">
+                Mon parcours entrepreneurial
+              </h2>
+              <div className="mt-6 space-y-4 text-ink-600 leading-relaxed">
+                <p className="reveal" data-reveal-delay="100">
+                  Mon approche n'est pas celle d'un développeur qui code pour coder, ni d'un business man qui cherche à maximiser les marges. C'est celle d'un{' '}
+                  <strong className="text-ink-900">résolveur de problèmes</strong>.
+                </p>
+                <p className="reveal" data-reveal-delay="140">
+                  Je suis passionné par la technologie, l'intelligence artificielle, la création de solutions numériques, l'automatisation et l'entrepreneuriat digital — non comme des fins en soi, mais comme des outils au service d'un impact réel.
+                </p>
+                <blockquote className="reveal my-6 border-l-4 border-brand-500 pl-5 text-base italic text-ink-700 font-medium" data-reveal-delay="180">
+                  Je suis convaincu que la technologie doit avant tout résoudre des problèmes réels. Mon approche consiste à identifier les difficultés du quotidien, comprendre leurs causes profondes et construire des solutions simples, accessibles et à fort impact.
+                </blockquote>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 reveal" data-reveal-delay="100">
+              {[
+                { label: 'Technologie', desc: "Outils numériques au service de l'humain" },
+                { label: 'Intelligence Artificielle', desc: "Automatisation intelligente des processus" },
+                { label: 'Entrepreneuriat Digital', desc: "Bâtir des produits à impact mesurable" },
+                { label: 'Résolution de problèmes', desc: "Partir du terrain, pas de la théorie" },
+              ].map((skill) => (
+                <div key={skill.label} className="card p-5 hover:-translate-y-1 transition-transform">
+                  <p className="text-sm font-bold text-ink-900">{skill.label}</p>
+                  <p className="mt-1 text-xs text-ink-500 leading-relaxed">{skill.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── 5. CE QUI ME MOTIVE ─────────────────────────────────── */}
       <Section>
         <div className="container-px">
-          <div className="reveal mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-ink-900">
-              Prêt à rejoindre l'aventure ?
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="eyebrow reveal">Motivations</span>
+            <h2 className="section-title reveal mt-4" data-reveal-delay="60">
+              Ce qui me motive chaque jour
             </h2>
-            <p className="mt-3 text-ink-500">
-              Que vous soyez investisseur, partenaire ou utilisateur — votre place est ici.
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {MOTIVATIONS.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="card p-7 flex flex-col gap-4 hover:-translate-y-1 transition-transform"
+              >
+                <div className={`h-12 w-12 grid place-items-center rounded-2xl bg-gradient-to-br ${item.color} text-white shadow-soft`}>
+                  <item.icon className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="font-bold text-ink-900">{item.title}</p>
+                  <p className="mt-2 text-sm text-ink-500 leading-relaxed">{item.text}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ── 6. CHIFFRES SUR LE PROBLÈME ─────────────────────────── */}
+      <Section className="bg-ink-50/50">
+        <div className="container-px">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="eyebrow reveal">Le problème en chiffres</span>
+            <h2 className="section-title reveal mt-4" data-reveal-delay="60">
+              Pourquoi l'immobilier africain doit changer
+            </h2>
+            <p className="reveal mt-3 text-ink-500" data-reveal-delay="100">
+              Ces chiffres illustrent les difficultés réelles que vivent locataires et propriétaires chaque jour.
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <button onClick={() => navigate('/investisseurs')} className="btn-primary">
-                Devenir investisseur
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {STATS.map((s, i) => (
+              <motion.div
+                key={s.label}
+                initial={{ opacity: 0, scale: 0.93 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="card p-7 flex flex-col gap-3 hover:-translate-y-1 transition-transform"
+              >
+                <div className={`h-11 w-11 grid place-items-center rounded-xl ${s.bg}`}>
+                  <s.icon className={`h-5 w-5 ${s.color}`} />
+                </div>
+                <div>
+                  <span className={`text-4xl font-extrabold tracking-tight ${s.color}`}>
+                    {s.value}
+                  </span>
+                  {s.unit && (
+                    <span className="ml-1 text-sm font-semibold text-ink-400">{s.unit}</span>
+                  )}
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-ink-900">{s.label}</p>
+                  <p className="mt-1 text-xs text-ink-500">{s.sub}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ── 7. MESSAGE PERSONNEL ─────────────────────────────────── */}
+      <Section>
+        <div className="container-px">
+          <div className="reveal mx-auto max-w-4xl overflow-hidden rounded-4xl bg-gradient-to-br from-brand-800 to-brand-950 p-10 text-white shadow-glow sm:p-14 relative">
+            <div className="absolute inset-0 bg-grid opacity-10" />
+            <div className="absolute -top-10 -right-10 h-60 w-60 rounded-full bg-brand-600/20 blur-3xl" />
+
+            <Quote className="relative h-10 w-10 text-brand-300" />
+            <div className="relative mt-6 space-y-5 text-lg font-medium leading-relaxed text-white/90 sm:text-xl">
+              <p>
+                ImoFlex est né d'une conviction simple : la technologie doit rendre les choses plus simples, plus rapides et plus accessibles.
+              </p>
+              <p>
+                Derrière cette plateforme se trouve la volonté de transformer un problème quotidien en une opportunité de progrès pour des millions de personnes.
+              </p>
+              <p>
+                Ce n'est que le début d'une aventure dont l'objectif est de contribuer à la modernisation de l'écosystème immobilier africain.
+              </p>
+            </div>
+            <p className="relative mt-8 text-sm font-semibold text-white/70">
+              — Répotinard Akotègnon, Fondateur &amp; CEO d'ImoFlex
+            </p>
+
+            <div className="relative mt-10 flex flex-wrap gap-3">
+              <button
+                onClick={() => navigate('/vision')}
+                className="rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                Notre Vision
               </button>
-              <button onClick={() => navigate('/contact')} className="btn-secondary">
-                Nous contacter
+              <button
+                onClick={() => navigate('/contact')}
+                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-900 transition-colors hover:bg-brand-50"
+              >
+                Me contacter
               </button>
             </div>
           </div>

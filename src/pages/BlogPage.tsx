@@ -54,35 +54,42 @@ export function BlogPage() {
       {/* Featured */}
       <Section className="!pt-4">
         <div className="container-px">
-          <div className="reveal grid gap-8 overflow-hidden rounded-4xl bg-white shadow-card ring-1 ring-ink-200/70 lg:grid-cols-2">
-            <div className="relative overflow-hidden">
-              <img
-                src={featured.image}
-                alt={featured.title}
-                className="h-64 w-full object-cover lg:h-full"
-                loading="lazy"
-              />
-              <span className="absolute left-4 top-4 rounded-full bg-brand-700 px-3 py-1 text-xs font-semibold text-white shadow-soft">
-                À la une
-              </span>
-            </div>
-            <div className="flex flex-col justify-center p-8 lg:p-12">
-              <div className="flex items-center gap-3 text-xs text-ink-400">
-                <span className="rounded-full bg-brand-50 px-2.5 py-1 font-semibold text-brand-700">
-                  {featured.category}
-                </span>
-                <span>{featured.date}</span>
-                <span className="flex items-center gap-1">
-                  <Clock className="h-3 w-3" /> {featured.readingTime}
+          {featured ? (
+            <div className="reveal grid gap-8 overflow-hidden rounded-4xl bg-white shadow-card ring-1 ring-ink-200/70 lg:grid-cols-2">
+              <div className="relative overflow-hidden">
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  className="h-64 w-full object-cover lg:h-full"
+                  loading="lazy"
+                />
+                <span className="absolute left-4 top-4 rounded-full bg-brand-700 px-3 py-1 text-xs font-semibold text-white shadow-soft">
+                  À la une
                 </span>
               </div>
-              <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-ink-900">{featured.title}</h2>
-              <p className="mt-3 text-ink-500">{featured.excerpt}</p>
-              <span className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand-700">
-                <Clock className="h-3 w-3" /> {featured.readingTime} de lecture
-              </span>
+              <div className="flex flex-col justify-center p-8 lg:p-12">
+                <div className="flex items-center gap-3 text-xs text-ink-400">
+                  <span className="rounded-full bg-brand-50 px-2.5 py-1 font-semibold text-brand-700">
+                    {featured.category}
+                  </span>
+                  <span>{featured.date}</span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="h-3 w-3" /> {featured.readingTime}
+                  </span>
+                </div>
+                <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-ink-900">{featured.title}</h2>
+                <p className="mt-3 text-ink-500">{featured.excerpt}</p>
+                <span className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand-700">
+                  <Clock className="h-3 w-3" /> {featured.readingTime} de lecture
+                </span>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="reveal text-center py-12 rounded-4xl bg-ink-50 border border-ink-100">
+              <h2 className="text-xl font-bold text-ink-900">Articles à venir</h2>
+              <p className="mt-2 text-ink-500">Notre blog est en cours de préparation. Revenez bientôt pour nos premières publications !</p>
+            </div>
+          )}
         </div>
       </Section>
 
